@@ -1,0 +1,11 @@
+# misc
+.DS_Store
+
+# cache
+__pycache__
+
+# database
+/database/vid_coffee.db
+
+# env
+/dotenv.py
