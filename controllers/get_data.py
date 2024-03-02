@@ -15,10 +15,10 @@ class Get_data():
         if row:
             coffee_point = row[0]
             free_coffee = row[1]
-            message_table = f'<b><u>Карточка гостя vid coffee на имя: {message.from_user.first_name}</u></b>\n\nОнлайн печатей: {coffee_point}\nБеспталных напитков: {free_coffee}'
+            message_table = f'<b><u>Карточка гостя Vid coffee на имя: {message.from_user.first_name}</u></b>\n\nОнлайн печатей: {coffee_point}\nБесплатных напитков: {free_coffee}'
             return bot.send_message(message.chat.id, message_table, parse_mode="HTML")
         else:
-            return bot.send_message(message.chat.id, 'У вас еще нет карточки, вам необходимо ее завести.')
+            return bot.send_message(message.chat.id, 'Для создания виртуальной краточки лояльности вы можете обратиться к любому сотруднику Vid coffee. Для регистрации необходимо предоставить ваш telegram id и номер мобильного телефона.')
         
     def check_card(bot, message, phone_number):
         db = sqlite3.connect('./database/vid_coffee.db')

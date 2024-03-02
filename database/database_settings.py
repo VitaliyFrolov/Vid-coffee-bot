@@ -13,15 +13,15 @@ db_cursor.execute("""CREATE TABLE IF NOT EXISTS cards (
 )""")
 
 db_cursor.execute("""
-CREATE TRIGGER IF NOT EXISTS update_free_coffee
-AFTER UPDATE OF coffee_point ON cards
-WHEN NEW.coffee_point >= 6
-BEGIN
-UPDATE cards
-SET free_coffee = free_coffee + 1,
-coffee_point = coffee_point - 6
-WHERE id = NEW.id;
-END;
+    CREATE TRIGGER IF NOT EXISTS update_free_coffee
+    AFTER UPDATE OF coffee_point ON cards
+    WHEN NEW.coffee_point >= 6
+    BEGIN
+    UPDATE cards
+    SET free_coffee = free_coffee + 1,
+    coffee_point = coffee_point - 6
+    WHERE id = NEW.id;
+    END;
 """)
 
 db_cursor.execute("""CREATE TABLE IF NOT EXISTS workers (

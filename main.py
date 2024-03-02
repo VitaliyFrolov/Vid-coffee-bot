@@ -23,7 +23,7 @@ def start_message(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    bot.send_message(message.chat.id, 'Тут будет информация о боте!')
+    bot.send_message(message.chat.id, 'Вас приветствует система лояльности кофейни Vid coffee. Тут вы можете копить виртуальные печати на виртуальной карте, а далее обменивать 6 таких печатий на любой напиток обсалютно бесплатно!')
 
 @bot.message_handler(commands=['card'])
 def card_menu(message):
@@ -86,7 +86,7 @@ def remove_card_handler(message):
     Access_rights.check_worker(message.from_user.id)
     if Worker_state.worker_status == True:
         Waiting_answer_worker.remove_card = True
-        bot.send_message(message.chat.id, 'Введите номер телефона пользователя: Пример: (+7998887766, 7788990)')
+        bot.send_message(message.chat.id, 'Введите номер телефона пользователя: Пример: (+7998887766)')
     else: pass
 
 @bot.message_handler(commands=['check_card'])
@@ -94,7 +94,7 @@ def check_card_handler(message):
     Access_rights.check_worker(message.from_user.id)
     if Worker_state.worker_status == True:
         Waiting_answer_worker.check_card = True
-        bot.send_message(message.chat.id, 'Введите номер телефона пользователя: Пример: (+7998887766, 7788990)')
+        bot.send_message(message.chat.id, 'Введите номер телефона пользователя: Пример: (+7998887766)')
     else: pass
 
 @bot.message_handler(commands=['add_coffee_point'])
@@ -148,4 +148,4 @@ def all_message_handler(message):
 
     else: pass
 
-bot.infinity_polling(none_stop=True)
+bot.infinity_polling(none_stop=False)
