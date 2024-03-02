@@ -9,3 +9,6 @@ __pycache__
 
 # env
 /dotenv.py
+
+# vevn
+/venv/include/*

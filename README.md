@@ -67,7 +67,7 @@
 `source venv/bin/activate`
 
 2. Подтянуть зависимости:
-`pip install`
+`pip freeze -r requirements.txt`
 
 3. Запустить проект:
 `python3 main.py`
