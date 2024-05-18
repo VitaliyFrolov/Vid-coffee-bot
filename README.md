@@ -63,14 +63,7 @@
 
 ## Для запуска проекта необходимо:
 
-1. Активировать виртуальную среду:
-`source venv/bin/activate`
-
-2. Подтянуть зависимости:
-`pip freeze -r requirements.txt`
-
-3. Запустить проект:
-`python3 main.py`
+`make build`
 
 ## Ссылки:
 

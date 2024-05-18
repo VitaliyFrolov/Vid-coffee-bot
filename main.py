@@ -1,6 +1,6 @@
 import telebot
 import os
-from dotenv import * 
+from dotenv import load_dotenv
 from database.database_settings import *
 from views.panels.main_panel import main_menu_panel
 from views.panels.admin_panel import admin_menu_panel
@@ -13,8 +13,10 @@ from views.states.admin_state import Admin_state, Waiting_answer_admin
 from views.states.worker_state import Worker_state, Waiting_answer_worker
 
 
-token_dotenv = os.environ.get('TOKEN')
-admin_id_dotenv = os.environ.get('ADMIN_ID')
+load_dotenv()
+
+token_dotenv = os.getenv('TOKEN')
+admin_id_dotenv = os.getenv('ADMIN_ID')
 bot = telebot.TeleBot(token_dotenv, parse_mode=None)
 
 @bot.message_handler(commands=['start'])

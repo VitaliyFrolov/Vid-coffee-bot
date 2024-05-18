@@ -1,6 +1,5 @@
 import sqlite3
 import os
-from dotenv import *
 from views.states.admin_state import Admin_state
 from views.states.worker_state import Worker_state
 
@@ -20,7 +19,7 @@ class Access_rights():
         db.close()
 
     def check_admin(tg_id):
-        admin_id = os.environ.get('ADMIN_ID')
+        admin_id = os.getenv('ADMIN_ID')
         if int(tg_id) == int(admin_id):
             Admin_state.admin_status = True
         else:

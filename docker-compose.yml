@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  tg-bot: 
+    build: .
+    env_file:
+      - .env
+    restart: "always"
+    container_name: "Vid-tg-bot"
+    volumes:
+      - /var/lib/docker/volumes/vid-tg-bot/_data:/app/data
+    ports:
+      - "8000:8000"
