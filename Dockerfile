@@ -1,4 +1,4 @@
-FROM python:3.12-slim as builder
+FROM mirror.gcr.io/library/python:3.12-slim as builder
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY ./requirements.txt .
 
 RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
-FROM python:3.12-slim
+FROM mirror.gcr.io/library/python:3.12-slim
 
 WORKDIR /app
 
